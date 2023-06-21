@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="https://cdn.iconscout.com/icon/free/png-256/free-weather-191-461610.png" type="image/x-icon">
+    <title>GetWeatherDetails.com</title>
+</head>
+
+<body>
+    <div id="main">
+        <div id="nav">
+            <div id="logo">
+                <ion-icon name="cloud-outline"></ion-icon> &nbsp; <span id="logoText">How's Weather?</span>
+            </div>
+            <div id="searchDiv">
+                <input type="text" id="search" placeholder="Search city..."><button id="button"><ion-icon
+                        name="search-sharp"></ion-icon></button>
+            </div>
+            <div id="currentLocation"><ion-icon name="location-outline"></ion-icon>&nbsp;<span id="location">None</span>
+            </div>
+        </div>
+        <section>
+            <div>
+                <div id="left">
+                    <div class="firstShadow"></div>
+                    <div id="first" class="card js-tilt">
+                        <div>Now</div>
+                        <div id="weather">
+                            <div id="weatherCloud">
+                                <h1 id="currentTemp">0°C</h1>
+                                <img id="currentTempIcon" src="" alt="img">
+                            </div>
+                            <p id="situation">None</p>
+                        </div>
+                        <hr>
+                        <div class="currentDetails">
+                            <div><ion-icon name="calendar-clear-outline"></ion-icon> <span
+                                    id="currentTime">CurrentTime</span></div>
+                            <div>
+                                <ion-icon name="location-outline"></ion-icon><span id="currentCity">None</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div id="daysForecast" class="secondShadow">5 Days Forecast</div>
+                    <div id="second" class="card js-tilt">
+                        <table>
+                            <thead>Forecast : 5 Days</thead>
+                            <tbody id="rowForForecast">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="right">
+                    <div id="rightFirst" class="card">
+
+                        <h5> Today Highlights</h5>
+                        <div id="rightFirstTop">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td id="air" class="card2">
+                                            <div id="airTop">
+                                                <span id="airQualityIndex"> Air Quality Index (AQI)</span>
+                                                <span id="aqiSituation"></span>
+                                            </div>
+                                            <div id="airBottom">
+                                                <div id="airBottomLeft">
+                                                    <i data-feather="wind"></i>
+                                                </div>
+                                                <div id="airBottomRight">
+                                                    <div id="co">
+                                                        <span>CO</span>
+                                                        <span id="codata">00</span>
+                                                    </div>
+                                                    <div id="so2">
+                                                        <span>SO <sub>2</sub></span>
+                                                        <span id="so2data">00</span>
+                                                    </div>
+                                                    <div id="no2">
+                                                        <span>NO <sub>2</sub></span>
+                                                        <span id="no2data">00</span>
+                                                    </div>
+                                                    <div id="o3">
+                                                        <span>O <sub>3</sub></span>
+                                                        <span id="o3data">00</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td id="sun" class="card2">
+                                            <div id="sunTop">
+                                                <span> Sunrise & Sunset</span>
+                                                <span></span>
+                                            </div>
+                                            <div id="sunBottom">
+                                                <div id="sunBottomLeft">
+                                                    <div><i data-feather="sun"></i></div>
+                                                    <div>
+                                                        <span>Sunrise</span>
+                                                        <span id="sunRiseTime">00:00:00</span>
+                                                    </div>
+                                                </div>
+                                                <div id="sunBottomRight">
+                                                    <div><i data-feather="moon"></i></div>
+                                                    <div>
+                                                        <span>Sunset</span>
+                                                        <span id="sunSetTime">00:00:00</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="rightFirstBottom">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td id="humidity" class="card card2">
+                                            <span>humidity</span>
+                                            <div>
+                                                <img src="./img/humidity.png" alt="">
+                                                <span id="humidityValue">0%</span>
+                                            </div>
+                                        </td>
+                                        <td id="pressure" class="card card2">
+                                            <span>Pressure</span>
+                                            <div>
+                                                <img src="./img/resilience.png" alt="">
+                                                <span id="pressureValue">0hPa</span>
+                                            </div>
+                                        </td>
+                                        <td id="visibility" class="card card2">
+                                            <span>Visibility</span>
+                                            <div>
+                                                <img src="./img/visibility.png" alt="">
+                                                <span id="visibilityValue">0km</span>
+                                            </div>
+                                        </td>
+                                        <td id="feelLike" class="card card2">
+                                            <span>Feel Like</span>
+                                            <div>
+                                                <img src="./img/thermometer.png" alt="">
+                                                <span id="feelLikeValue">0%</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div id="midHeading">
+                        <h5>Today At</h3>
+                    </div>
+                    <div id="rightSecond" class="card" data-tilt>
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper" id="dataToBeShown">
+
+
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                Copyright &copy; All rights reserved! Developed by Moin Khan.
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js"
+        integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.0.3/tilt.jquery.min.js"
+        integrity="sha512-14AZ/DxUrlF26z6v7egDkpJHKyJRn/7ue2BgpWZ/fmqrqVzf4PrQnToy99sHmKwzKev/VZ1tjPxusuTV/n8CcQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
