@@ -124,7 +124,7 @@ showAQI = async (url) => {
     // console.log('so2', so2)
 
     airQualityIndex.innerText = "Air Quality Index (" + aqiRes.list[0].main.aqi + ")";
-    let url2 = `http://api.openweathermap.org/data/2.5/forecast?units=metric&q=${city}&appid=${apiKey}`;
+    let url2 = `https://api.openweathermap.org/data/2.5/forecast?units=metric&q=${city}&appid=${apiKey}`;
     showForecast(url2);
 }
 
