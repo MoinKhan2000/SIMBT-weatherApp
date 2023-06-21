@@ -152,7 +152,7 @@ shwoWeather = (obj) => {
         link = "./icons/sunny.png"
     }
     currentTempIcon.src = link;
-    showAQI(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${obj.coord.lat}&lon=${obj.coord.lon}&appid=${apiKey}`);
+    showAQI(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${obj.coord.lat}&lon=${obj.coord.lon}&appid=${apiKey}`);
 
 }
 
