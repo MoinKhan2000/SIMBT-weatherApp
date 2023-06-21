@@ -103,10 +103,13 @@ section>div {
     display: flex;
     flex-direction: row;
     gap: 1rem;
+    height: 100%;
     position: relative;
     margin-bottom: 1rem;
     padding: 1rem;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #left,
@@ -586,6 +589,7 @@ body::-webkit-scrollbar-thumb {
     color: #e8f0fe;
     text-align: center;
     font-weight: bold;
+    top: 2vh;
 }
 
 @media only screen and (max-width: 820px) {
